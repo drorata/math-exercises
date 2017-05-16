@@ -1,0 +1,21 @@
+\documentclass{minimal}
+
+\usepackage{tikz}
+\usetikzlibrary{turtle}
+
+\def\xs{\VAR{num_list}}
+
+\begin{document}
+
+\begin{tikzpicture}[thick, turtle/distance=4em]
+  \draw [thick][turtle={home,right}] coordinate (t0)
+  \foreach \x [count=\i] in \xs
+   {
+    [turtle={forward,left}] node[above,xshift=-2em] (l\i) {\x}
+    coordinate(b\i)
+    [turtle={forward,right}] coordinate (t\i)
+   };
+  \draw (b\VAR{N}) -- node[right] {\VAR{res}} (t\VAR{N});
+\end{tikzpicture}
+
+\end{document}
