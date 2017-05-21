@@ -56,4 +56,4 @@ def generate_TeX_file(numbers_str, res,  N,
     )
     template = latex_jinja_env.get_template(template_filename)
     with open(output_filename, 'w') as f:
-        f.write(template.render(num_list=numbers_str[0:-1], res=res, N=N))
+        f.write(template.render(num_list=numbers_str, res=res, N=N))
